@@ -3,10 +3,7 @@
 This sample shows how to create a device simulator that pushes messages into IoT Hub and is consumed with an Azure Stream Analytics Job that stores the data into a DocumentDB.
 
 ## 1. Create the IoT Hub
-Use this [documentation](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-node-node-getstarted) and follow the instructions in the section *Create a IoT Hub*.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/U8iku11V9oQ" frameborder="0" allowfullscreen>
-</iframe>
+[Youtube: Create IoT Hub](https://www.youtube.com/embed/U8iku11V9oQ)
 
 ## 2. Create a device entity
 Use the same *iothub-explorer* to register a device in the IoT Hub. Look at this [document](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-node-node-twin-getstarted) under the section *Create a device identity* to get a description of this.
