@@ -16,21 +16,79 @@ Use the same *iothub-explorer* to register a device in the IoT Hub. Look at this
 
 Alt.
 
-[Youtube: Create a device entity in the Portal]()
+[Youtube: Create a device entity in the Portal](https://www.youtube.com/watch?v=Pu3tO4awXW0)
 
 
 ## 3. Create a simulated device with Node.Js
-Use this [document](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-node-node-getstarted) under section *Create a simulated device app*.
+This is copied from the this [document](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-node-node-getstarted) under section *Create a simulated device app* and changed in a couple small ways.
 
-Add a parameter to this line:
+### Create a simulated device app
+In this section, you create a Node.js console app that simulates a device that sends device-to-cloud messages to an IoT hub.
 
-    var data = JSON.stringify({ deviceId: 'myFirstNodeDevice', windSpeed: windSpeed });
- to
-
-     var data = JSON.stringify({ deviceId: 'myFirstNodeDevice', windSpeed: windSpeed, 'time': new Date().getTime() });
+1. Create an empty folder called **simulateddevice**. In the **simulateddevice** folder, create a package.json file using the following command at your command prompt. Accept all the defaults:
+   
+    ```
+    npm init
+    ```
+2. At your command prompt in the **simulateddevice** folder, run the following command to install the **azure-iot-device** Device SDK package and **azure-iot-device-mqtt** package:
+   
+    ```
+    npm install azure-iot-device azure-iot-device-mqtt --save
+    ```
+3. Using a text editor, create a **SimulatedDevice.js** file in the **simulateddevice** folder.
+4. Add the following `require` statements at the start of the **SimulatedDevice.js** file:
+   
+    ```
+    'use strict';
+   
+    var clientFromConnectionString = require('azure-iot-device-mqtt').clientFromConnectionString;
+    var Message = require('azure-iot-device').Message;
+    ```
+5. Add a **connectionString** variable and use it to create a **Client** instance. Replace **{youriothostname}** with the name of the IoT hub you created the *Create an IoT Hub* section. Replace **{yourdevicekey}** and **{deviceid}** with the device key and id values you generated in the *Create a device identity* section:
+   
+    ```
+    var connectionString = 'HostName={youriothostname};DeviceId={deviceid};SharedAccessKey={yourdevicekey}';
+   
+    var client = clientFromConnectionString(connectionString);
+    ```
+6. Add the following function to display output from the application:
+   
+    ```
+    function printResultFor(op) {
+      return function printResult(err, res) {
+        if (err) console.log(op + ' error: ' + err.toString());
+        if (res) console.log(op + ' status: ' + res.constructor.name);
+      };
+    }
+    ```
+7. Create a callback and use the **setInterval** function to send a message to your IoT hub every second:
+   
+    ```
+    var connectCallback = function (err) {
+      if (err) {
+        console.log('Could not connect: ' + err);
+      } else {
+        console.log('Client connected');
+   
+        // Create a message and send it to the IoT Hub every second
+        setInterval(function(){
+            var windSpeed = 10 + (Math.random() * 4);
+            var data = JSON.stringify({ deviceId: 'myFirstNodeDevice', windSpeed: windSpeed, 'time': new Date().getTime() });
+            var message = new Message(data);
+            console.log("Sending message: " + message.getData());
+            client.sendEvent(message, printResultFor('send'));
+        }, 1000);
+      }
+    };
+    ```
+8. Open the connection to your IoT Hub and start sending messages:
+   
+    ```
+    client.open(connectCallback);
+    ```
+9. Save and close the **SimulatedDevice.js** file.
 
 ## 4. (test) Use iothub-explorer to monitor your device
-
     iothub-explorer monitor-events <device-id> --login <iot hub connection string>
 
 Start your simulated device:
@@ -47,7 +105,7 @@ You should receive messages, if all is ok.
 
 ## 6. Create a Stream analytics job
 
-[Youtube: Create a Stream analytics job]()
+[Youtube: Create a Stream analytics job](https://www.youtube.com/watch?v=mKLi9V4BA4M)
 
 ## 7. Start the simulator again
     node SimulatedDevice.js
