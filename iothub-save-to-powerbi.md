@@ -18,7 +18,7 @@ If you haven't already done the laboration
 ## 2. Start the simulator again
     node SimulatedDevice.js
 
-## 3. Control that data is created in DocumentDB
+## 3. Create PowerBI real time visualization
 
 [Youtube: Create a PowerBI real time visualization](https://www.youtube.com/embed/V91svpSSCu4)
 
