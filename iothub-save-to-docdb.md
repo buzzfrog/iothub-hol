@@ -132,7 +132,7 @@ You should receive messages, if all is ok.
 
 Or
 
-    az documentdb create --name buzz4docdb --resource-group buzziot5group
+    az documentdb create --name <documentdb-name> --resource-group <resoure-group-name>
  > It can take a couple of minutes to create the documentdb database   
 
 ## 6. Create a Stream analytics job
