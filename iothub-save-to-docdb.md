@@ -21,6 +21,12 @@ The Azute CLI can be found [here](https://docs.microsoft.com/en-us/cli/azure/ins
     az iot hub create --name <iothub name> --resource-group <resoure-group-name> --sku s1
 > It can take a couple of minutes to create the iot hub.
 
+> NOTE
+>
+>You will need the Iot Hub Connection String later. It could be good to copy it right now
+so it is easy to find later.
+
+> You find it in the Azure Portal by opening the **IoT Hub** pane and under **settings**, click on **Shared access policies** and choose **iothubowner**. 
 ## 2. Create a device entity
 [Youtube: Create a device entity in the Portal](https://www.youtube.com/embed/Pu3tO4awXW0)
 
