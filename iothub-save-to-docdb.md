@@ -71,6 +71,15 @@ In this section, you create a Node.js console app that simulates a device that s
    
     var client = clientFromConnectionString(connectionString);
     ```
+
+The {youriothubhostname} is easiest to find in the IoT Hub connection string that you copied before. 
+
+HostName=**buzz4iothub.azure-devices.net**;SharedAccessKeyName=iothubowner;SharedAccessKey=9WcyDeRoBFahlJwswQhgLGGCo6+iNaWGFpRRoETnOdM=
+
+Example:
+
+    var connectionString = 'HostName=buzz4iothub.azure-devices.net;DeviceId=dev100;SharedAccessKey=be1CMCLV2BMsVV2ii2IcR2QqNJlxMXVNuBwtF8GuOIc=';
+
 6. Add the following function to display output from the application:
    
     ```
