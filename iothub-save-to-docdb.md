@@ -48,7 +48,7 @@ In this section, you create a Node.js console app that simulates a device that s
 1. Create an empty folder called **simulateddevice**. In the **simulateddevice** folder, create a package.json file using the following command at your command prompt. Accept all the defaults:
    
     ```
-    npm init
+    npm init -y
     ```
 2. At your command prompt in the **simulateddevice** folder, run the following command to install the **azure-iot-device** Device SDK package and **azure-iot-device-mqtt** package:
    
