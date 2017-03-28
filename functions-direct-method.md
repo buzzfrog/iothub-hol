@@ -1,6 +1,6 @@
 # Use Direct Method to initiate a command on a device #
 ## Introduction ##
-This sample shows how to use a create a function in Azure Function that sends a command to a device through Iot Hub.
+This sample shows how to use a create a serverless function in *Azure Functions* that sends a command to a device through Iot Hub.
 
 If you haven't already done the laboration 
 [Consume events from IoT Hub and store them in DocumentDB](https://github.com/buzzfrog/iothub-hol/blob/master/iothub-save-to-docdb.md), you need to do section 1 and 2 in that document first.
@@ -71,6 +71,12 @@ In this section, you create a Node.js console app that responds to a method call
 
 [Youtube: Azure Functions, install dependencies](https://www.youtube.com/embed/M1c-RpFDInI)
 
+It could take a couple of minutes to install all dependecies.
+
+> NOTE
+>
+> The user interface for Azure function is rather new. This feature will hopefully be better supported in the future.
+
 ## 4. Update source code for the function
 
 1. Replace all code in teh function with the following code: 
@@ -117,8 +123,9 @@ In this section, you create a Node.js console app that responds to a method call
 ## 5. Test
 1. Start the device simulator
 
+    ```
     node SimulatedDeviceWithMethod
-
+    ```
 2. Run the Azure Function
 
 3. Verify responses both on the command line and in the log window in the function user interface.
