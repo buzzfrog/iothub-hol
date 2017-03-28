@@ -137,7 +137,7 @@ Or
 
 ## 6. Create a Stream analytics job
 
-[Youtube: Create a Stream analytics job](https://www.youtube.com/watch?v=mKLi9V4BA4M)
+[Youtube: Create a Stream analytics job](https://www.youtube.com/embed/mKLi9V4BA4M)
 
 ## 7. Start the simulator again
     node SimulatedDevice.js
