@@ -2,21 +2,31 @@
 ## Introduction ##
 This sample shows how to create a device simulator that pushes messages into IoT Hub and is consumed with an Azure Stream Analytics Job that stores the data into a DocumentDB.
 
+
 ## 1. Create the IoT Hub
 [Youtube: Create IoT Hub in the Portal](https://www.youtube.com/embed/U8iku11V9oQ)
 
-[Youtube: Create an IoT Hub with Azure CLI]()
-The Azute CLI can be found [here](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli).
-You need to authenticate with Azure before you can use the CLI
+Or
 
-    az login
+Create an IoT Hub with Azure CLI
+
+The Azute CLI can be found [here](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli).
+
+>You need to authenticate with Azure before you can use the CLI
+>
+>    az login
+
+    az group create --name <resoure-group-name> --location "West Europe"
+
+    az iot hub create --name <iothub name> --resource-group <resoure-group-name> --sku s1
+> It can take a couple of minutes to create the iot hub.
 
 ## 2. Create a device entity
+[Youtube: Create a device entity in the Portal](https://www.youtube.com/embed/Pu3tO4awXW0)
+
+Or
+
 Use the same *iothub-explorer* to register a device in the IoT Hub. Look at this [document](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-node-node-twin-getstarted) under the section *Create a device identity* to get a description of this.
-
-Alt.
-
-[Youtube: Create a device entity in the Portal](https://www.youtube.com/watch?v=Pu3tO4awXW0)
 
 
 ## 3. Create a simulated device with Node.Js
@@ -99,9 +109,12 @@ You should receive messages, if all is ok.
 
 ## 5. Create a DocumentDB database
 
-[Youtube: Create a DocumentDB database in the Portal]()
+[Youtube: Create a DocumentDB database in the Portal](https://www.youtube.com/embed/279XT_mgLp0)
 
-[Youtube: Create a DocumentDB database with Azure CLI]()
+Or
+
+    az documentdb create --name buzz4docdb --resource-group buzziot5group
+ > It can take a couple of minutes to create the documentdb database   
 
 ## 6. Create a Stream analytics job
 
@@ -112,5 +125,5 @@ You should receive messages, if all is ok.
 
 ## 8. Control that data is created in DocumentDB
 
-[Youtube: Control that data is created in DocumentDB]()
+[Youtube: Control that data is created in DocumentDB](https://www.youtube.com/embed/zmI0obC4jD0)
 
