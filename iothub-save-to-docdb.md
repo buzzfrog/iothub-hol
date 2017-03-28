@@ -27,6 +27,7 @@ The Azute CLI can be found [here](https://docs.microsoft.com/en-us/cli/azure/ins
 so it is easy to find later.
 
 > You find it in the Azure Portal by opening the **IoT Hub** pane and under **settings**, click on **Shared access policies** and choose **iothubowner**. 
+
 ## 2. Create a device entity
 [Youtube: Create a device entity in the Portal](https://www.youtube.com/embed/Pu3tO4awXW0)
 
@@ -34,6 +35,9 @@ Or
 
 Use the same *iothub-explorer* to register a device in the IoT Hub. Look at this [document](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-node-node-twin-getstarted) under the section *Create a device identity* to get a description of this.
 
+> NOTE
+>
+> You need the *Device Id* and *Primary Key* later. You can copy it right now so it easier to find later.
 
 ## 3. Create a simulated device with Node.Js
 This is copied from the this [document](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-node-node-getstarted) under section *Create a simulated device app* and changed in a couple small ways.
