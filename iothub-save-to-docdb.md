@@ -102,7 +102,7 @@ Example:
         // Create a message and send it to the IoT Hub every second
         setInterval(function(){
             var windSpeed = 10 + (Math.random() * 4);
-            var data = JSON.stringify({ deviceId: 'myFirstNodeDevice', windSpeed: windSpeed, 'time': new Date().getTime() });
+            var data = JSON.stringify({ deviceId: '{deviceid}', windSpeed: windSpeed, 'time': new Date().getTime() });
             var message = new Message(data);
             console.log("Sending message: " + message.getData());
             client.sendEvent(message, printResultFor('send'));
@@ -138,6 +138,10 @@ Or
 ## 6. Create a Stream analytics job
 
 [Youtube: Create a Stream analytics job](https://www.youtube.com/embed/mKLi9V4BA4M)
+
+> NOTE
+>
+> Make sure that the Stream Analytics job has started and is in the state **Running**.
 
 ## 7. Start the simulator again
     node SimulatedDevice.js
