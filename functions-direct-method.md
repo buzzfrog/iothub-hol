@@ -65,11 +65,11 @@ In this section, you create a Node.js console app that responds to a method call
 
 ## 2. Create an Azure Function
 
-[Youtube: Create an Azure Function in Azure Portal](https://www.youtube.com/embed/a6BIybRjeIY)
+[Youtube: Create an Azure Function in Azure Portal](https://www.youtube.com/embed/a6BIybRjeIY) (The interface has changed since I recorded this video.)
 
 ## 3. Install dependencies for the function
 
-[Youtube: Azure Functions, install dependencies](https://www.youtube.com/embed/M1c-RpFDInI)
+[Youtube: Azure Functions, install dependencies](https://www.youtube.com/embed/M1c-RpFDInI) (The interface has changed since I recorded this video.)
 
 It could take a couple of minutes to install all dependecies.
 
